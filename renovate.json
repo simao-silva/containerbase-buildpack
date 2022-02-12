@@ -1,34 +1,35 @@
 {
-   "extends":[
-      "config:base"
-   ],
-   "enabledManagers":[
-      "dockerfile",
-      "github-actions"
-   ],
-   "packageRules":[
-      {
-         "matchUpdateTypes":[
-            "major",
-            "minor",
-            "patch",
-            "digest"
-         ],
-         "automerge":true,
-         "automergeType":"branch"
-      }
-   ],
-   "regexManagers":[
-      {
-         "description":"Update version: variables in workflows",
-         "fileMatch":[
-            "^\\.github\\/workflows\\/[^/]+\\.ya?ml$"
-         ],
-         "matchStrings":[
-            "\\s+VERSION: (?<currentValue>.+?) #renovate: datasource=(?<datasource>[a-z-]+?) depName=(?<depName>.+?)(?: lookupName=(?<lookupName>.+?))?(?: versioning=(?<versioning>[a-z-]+?))?\\s"
-         ]
-      }
-   ],
-   "requiredStatusChecks":null,
-   "platformAutomerge":true
+  "extends": [
+    "config:base"
+  ],
+  "enabledManagers": [
+    "dockerfile",
+    "github-actions"
+  ],
+  "packageRules": [
+    {
+      "matchUpdateTypes": [
+        "major",
+        "minor",
+        "patch",
+        "digest"
+      ],
+      "automerge": true,
+      "automergeType": "branch"
+    }
+  ],
+  "regexManagers": [
+    {
+      "description": "Update version: variables in workflows",
+      "fileMatch": [
+        "^\\.github\\/workflows\\/[^/]+\\.ya?ml$"
+      ],
+      "matchStrings": [
+        "VERSION: \\\"(?<currentValue>.*?)\\\".*\\n"
+      ],
+      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
+    }
+  ],
+  "requiredStatusChecks": null,
+  "platformAutomerge": true
 }
