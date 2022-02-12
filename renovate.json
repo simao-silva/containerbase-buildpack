@@ -22,6 +22,7 @@
     {
       "description": "Update version: variables in workflows",
       "datasourceTemplate": "git-tags",
+      "depNameTemplate": "git-tags",
       "fileMatch": [
         "^\\.github\\/workflows\\/[^/]+\\.ya?ml$"
       ],
