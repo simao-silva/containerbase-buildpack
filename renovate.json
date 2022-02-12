@@ -27,7 +27,7 @@
         "^\\.github\\/workflows\\/[^/]+\\.ya?ml$"
       ],
       "matchStrings": [
-        "VERSION: \\\"(?<currentValue>.*?)\\\".*\\n"
+        "VERSION: \\""(?<currentValue>.*?)\\"".*\\n"
       ],
       "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
     }
