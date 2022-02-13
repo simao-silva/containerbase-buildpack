@@ -21,8 +21,8 @@
   "regexManagers": [
     {
       "description": "Update version: variables in workflows",
-      "datasourceTemplate": "git-tags",
-      "depNameTemplate": "git-tags",
+      "datasourceTemplate": "github-tags",
+      "depNameTemplate": "github-tags",
       "fileMatch": [
         "^\\.github\\/workflows\\/[^/]+\\.ya?ml$"
       ],
