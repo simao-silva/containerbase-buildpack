@@ -20,6 +20,7 @@
   ],
   "regexManagers": [
     {
+      "datasourceTemplate": "github-tags",
       "fileMatch": [
         "^\\.github\\/workflows\\/[^/]+\\.ya?ml$"
       ],
