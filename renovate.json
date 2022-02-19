@@ -16,13 +16,11 @@
   ],
   "regexManagers": [
     {
-      "datasourceTemplate": "github-tags",
-      "depNameTemplate": "github-tags",
       "fileMatch": [
         "Dockerfile"
       ],
       "matchStrings": [
-        "# renovate: datasource=(?<datasource>[a-z-]+?)(?: lookupName=(?<lookupName>.+?))?(?: versioning=(?<versioning>[a-z-]+?))?\\sRUN install-[a-z]+? (?<depName>[a-z-]+?) (?<currentValue>.+?)\\s"
+        ".*# renovate: datasource=(?<datasource>\\S+) lookupName=(?<depName>\\S+)( versioning=(?<versioning>.*?))?\\sRUN install-[a-z]+? [a-z]+? (?<currentValue>.*)\\s.*"
       ],
       "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
     },
