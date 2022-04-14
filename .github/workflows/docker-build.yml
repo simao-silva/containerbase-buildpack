@@ -11,7 +11,7 @@ on:
 env:
   IMAGE_NAME: "simaofsilva/containerbase-buildpack"
   REPO_URL: "https://github.com/containerbase/buildpack"
-  VERSION: "3.14.5" # renovate: datasource=github-tags depName=containerbase/buildpack
+  VERSION: "3.14.6" # renovate: datasource=github-tags depName=containerbase/buildpack
   LOCAL_PATH: "/tmp/buildpack"
 
 
