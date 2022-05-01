@@ -1,7 +1,7 @@
 #--------------------------------------
 # Image: base
 #--------------------------------------
-FROM ubuntu:22.04@sha256:26c68657ccce2cb0a31b330cb0be2b5e108d467f641c62e13ab40cbec258c68d
+FROM ubuntu:20.04@sha256:9d42d0e3e57bc067d10a75ee33bdd1a5298e95e5fc3c5d1fce98b455cb879249
 
 ARG APT_HTTP_PROXY
 
@@ -18,7 +18,6 @@ CMD ["bash"]
 COPY src/ /
 
 RUN install-buildpack
-
 
 # renovate: datasource=github-tags lookupName=git/git
 RUN install-tool git v2.36.0

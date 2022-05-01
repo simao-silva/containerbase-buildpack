@@ -3,20 +3,23 @@
     "config:base",
     ":disableDependencyDashboard"
   ],
-  "baseBranches": [
-    "main",
-    "dev"
-  ],
   "packageRules": [
     {
+      "matchPackageNames": [
+        "ubuntu"
+      ],
       "matchUpdateTypes": [
         "major",
         "minor",
-        "patch",
-        "digest"
+        "patch"
       ],
-      "automerge": true,
-      "automergeType": "branch"
+      "enabled": false
+    },
+    {
+      "matchPackageNames": [
+        "ubuntu"
+      ],
+      "allowedVersions": "<22",
     }
   ],
   "regexManagers": [
@@ -40,6 +43,6 @@
     }
   ],
   "prHourlyLimit": 0,
-  "requiredStatusChecks": null,
+  "ignoreTests": true,
   "platformAutomerge": true
 }
