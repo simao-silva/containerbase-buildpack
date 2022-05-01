@@ -3,6 +3,10 @@
     "config:base",
     ":disableDependencyDashboard"
   ],
+  "baseBranches": [
+    "main",
+    "dev"
+  ],
   "packageRules": [
     {
       "matchUpdateTypes": [
