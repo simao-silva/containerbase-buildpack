@@ -19,7 +19,7 @@
       "matchPackageNames": [
         "ubuntu"
       ],
-      "allowedVersions": "<22",
+      "allowedVersions": "<22"
     }
   ],
   "regexManagers": [
