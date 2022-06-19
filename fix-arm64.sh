@@ -3,10 +3,10 @@
 ####################################################################################
 echo "Changing from amd64 to arm64"
 
-declare -a arr1=("src/usr/local/buildpack/tools/flux.sh"
+declare -a arr1=("src/usr/local/buildpack/tools/v2/flux.sh"
                  "src/usr/local/buildpack/tools/git-lfs.sh"
                  "src/usr/local/buildpack/tools/golang.sh"
-                 "src/usr/local/buildpack/tools/helm.sh"
+                 "src/usr/local/buildpack/tools/v2/helm.sh"
                  "src/usr/local/buildpack/tools/jb.sh"
                  "src/usr/local/buildpack/tools/terraform.sh"
                 )
@@ -32,7 +32,7 @@ done
 
 ####################################################################################
 echo "Changing from x64 to arm64"
-declare -a arr3=("src/usr/local/buildpack/tools/node.sh"
+declare -a arr3=("src/usr/local/buildpack/tools/v2/node.sh"
                  "src/usr/local/buildpack/tools/powershell.sh"
                 )
 

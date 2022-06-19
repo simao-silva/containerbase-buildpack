@@ -7,13 +7,13 @@ on:
     paths:
       - Dockerfile
       - '.github/workflows/**'
+      - fix-arm64.sh
 
 env:
   IMAGE_NAME: "simaofsilva/containerbase-buildpack"
   REPO_URL: "https://github.com/containerbase/buildpack"
   VERSION: "4.5.0" # renovate: datasource=github-tags depName=containerbase/buildpack
   LOCAL_PATH: "/tmp/buildpack"
-
 
 jobs:
   build:
