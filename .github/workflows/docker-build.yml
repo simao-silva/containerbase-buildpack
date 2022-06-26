@@ -7,7 +7,7 @@ on:
     paths:
       - Dockerfile
       - '.github/workflows/**'
-      - fix-arm64.sh
+      - patch-arm64.sh
 
 env:
   IMAGE_NAME: "simaofsilva/containerbase-buildpack"
@@ -43,12 +43,12 @@ jobs:
           cp Dockerfile ${{ env.LOCAL_PATH }}
           cat ${{ env.LOCAL_PATH }}/Dockerfile
 
-      - name: Apply fix to dependencies
+      - name: Patching dependencies
         run: |
-          cp fix-arm64.sh ${{ env.LOCAL_PATH }}
+          cp patch-arm64.sh ${{ env.LOCAL_PATH }}
           cd ${{ env.LOCAL_PATH }}
-          chmod +x fix-arm64.sh
-          ./fix-arm64.sh
+          chmod +x patch-arm64.sh
+          ./patch-arm64.sh
           cat src/usr/local/buildpack/tools/docker.sh
 
       - name: Build and push
