@@ -4,11 +4,11 @@
 echo "Changing from amd64 to arm64"
 
 declare -a arr1=("src/usr/local/buildpack/tools/v2/flux.sh"
-                 "src/usr/local/buildpack/tools/git-lfs.sh"
-                 "src/usr/local/buildpack/tools/golang.sh"
+                 "src/usr/local/buildpack/tools/v2/git-lfs.sh"
+                 "src/usr/local/buildpack/tools/v2/golang.sh"
                  "src/usr/local/buildpack/tools/v2/helm.sh"
-                 "src/usr/local/buildpack/tools/jb.sh"
-                 "src/usr/local/buildpack/tools/terraform.sh"
+                 "src/usr/local/buildpack/tools/v2/jb.sh"
+                 "src/usr/local/buildpack/tools/v2/terraform.sh"
                 )
 
 for f in "${arr1[@]}"
@@ -20,20 +20,20 @@ done
 ####################################################################################
 echo "Changing from x64 to aarch64"
 
-declare -a arr2=("src/usr/local/buildpack/tools/java-jre.sh"
-                 "src/usr/local/buildpack/tools/java.sh"
+declare -a arr2=(""
                 )
 
-for f in "${arr2[@]}"
-do
-   sed -i "s|x64|aarch64|g" "$f"
-done
+# for f in "${arr2[@]}"
+# do
+#    sed -i "s|x64|aarch64|g" "$f"
+# done
 
 
 ####################################################################################
 echo "Changing from x64 to arm64"
 declare -a arr3=("src/usr/local/buildpack/tools/v2/node.sh"
-                 "src/usr/local/buildpack/tools/powershell.sh"
+                 "src/usr/local/buildpack/tools/v2/powershell.sh"
+                 "src/usr/local/buildpack/tools/v2/dart.sh"
                 )
 
 for f in "${arr3[@]}"
@@ -44,9 +44,8 @@ done
 
 ####################################################################################
 echo "Changing from x86_64 to aarch64"
-declare -a arr4=("src/usr/local/buildpack/tools/docker.sh"
-                 "src/usr/local/buildpack/tools/nix.sh"
-                 "src/usr/local/buildpack/tools/rust.sh"
+declare -a arr4=("src/usr/local/buildpack/tools/v2/docker.sh"
+                 "src/usr/local/buildpack/tools/v2/rust.sh"
                 )
 
 for f in "${arr4[@]}"
