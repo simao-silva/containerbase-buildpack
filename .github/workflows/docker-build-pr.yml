@@ -1,8 +1,8 @@
-name: build and push image
+name: test building image
 
 on:
   push:
-    branches:
+    branches-ignore:
       - "main"
     paths:
       - Dockerfile
@@ -44,30 +44,13 @@ jobs:
           chmod +x patch-arm64.sh
           ./patch-arm64.sh
 
-      - name: Login to DockerHub
-        uses: docker/login-action@v2
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-
-      - name: Build and push
+      - name: Build
         id: docker_build
         uses: docker/build-push-action@v4
         with:
           context: ${{ env.LOCAL_PATH }}
           platforms: linux/arm64/v8
-          push: true
+          load: true
           tags: |
             ${{ env.IMAGE_NAME }}:${{ env.VERSION }}
             ${{ env.IMAGE_NAME }}:latest
-
-  # delete_old_runs:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Delete workflow runs
-  #       uses: Mattraks/delete-workflow-runs@v2.0.3
-  #       with:
-  #         token: ${{ github.token }}
-  #         repository: ${{ github.repository }}
-  #         retain_days: 15
-  #         keep_minimum_runs: 5

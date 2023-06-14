@@ -17,7 +17,7 @@ CMD ["bash"]
 
 COPY src/ /
 
-RUN install-buildpack
+RUN install-containerbase
 
 # renovate: datasource=github-tags lookupName=git/git
 RUN install-tool git v2.41.0
