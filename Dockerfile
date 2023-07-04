@@ -1,7 +1,7 @@
 #--------------------------------------
 # Image: base
 #--------------------------------------
-FROM ubuntu:22.04@sha256:6120be6a2b7ce665d0cbddc3ce6eae60fe94637c6a66985312d1f02f63cc0bcd
+FROM ubuntu:22.04@sha256:dcbd90ebfbcfd693bdf862db527c4403411c830b9c60475031008b5930138c66
 
 ARG APT_HTTP_PROXY
 
